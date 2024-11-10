@@ -1,0 +1,724 @@
+/*
+Max Krishka-Pachal (200526378)
+Dmytro Stepaniuk (200426341)
+October 1 2024
+CS 215
+Assignment 2
+styles.css
+*/
+
+/* everything font */
+@font-face {
+    font-family: 'LS';
+    src: url('../fonts/LS/Fonts/lsregular.otf') format('opentype');  
+}
+
+/* logo/header font */
+@font-face {
+    font-family: 'RabbitHole';
+    src: url('../fonts/RabbitHole/Fonts/rabbit\ hole.ttf') format('truetype');  
+}
+
+:root {
+    --main: #25402A;
+    --accent-1: #FFB20E;
+    --accent-2: #BF650D;
+    --accent-3: #DA2C38;
+    --accent-4: #A37000;
+
+    --gradient-1: rgba(2,91,19,1);
+    --gradient-2: rgba(28,75,37,1);
+    --gradient-3: rgba(24,32,25,1);
+}
+
+/***************/
+/* BASE LAYOUT */
+/***************/
+
+body {
+    background-color: #fff;
+    font-family: 'LS', sans-serif;
+    color: black;
+    margin: 0;
+    background-color: cornsilk;
+}
+
+/* holds all page elements */
+#container {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 180px 70px 1fr;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+#signup-container {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 180px 1fr;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+/* GENERAL STYLING */
+
+.button-style {
+    font-family: "LS", sans-serif;
+    border: 2px solid var(--accent-1);
+    border-radius: 5px;
+    background: var(--accent-1);
+    padding: 5px 15px;
+    color: black;
+    font-size: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+.title-text {
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
+textarea, input[type="text"] {
+    font-family: 'LS', sans-serif;
+}
+
+/******************/
+/* HEADER CONTENT */
+/******************/
+
+#header {
+    background: radial-gradient(circle, var(--gradient-1) 0%, var(--gradient-2) 50%, var(--gradient-3) 100%);
+    color: var(--accent-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+/* holds both the company name and the logo image */
+#logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "RabbitHole", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#logo-image {
+    width: auto;
+    height: 115px;;
+    object-fit: contain;
+}
+
+#company-name {
+    font-size: 150px;
+    line-height: 1;
+    margin-left: 10px;
+    padding: 0;
+    margin-bottom: -20px;
+}
+
+/* holds both the login and signup buttons in the header */
+#header-button-container {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+/*******************/
+/* PROFILE SIDEBAR */
+/*******************/
+
+#profile {
+    background-color: cornsilk; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    
+    padding: 20px 0;
+    max-height: 100%;
+}
+
+.profile-signup {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.profile-else {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+/* LOGIN */
+
+.auth-form,
+.button-grid {
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    gap: 30px;
+}
+
+.form-input-grid {
+    display: grid;
+    row-gap: 20px;
+}
+
+#email,
+#pword {
+    border-radius: 5px;
+    height: 20px;
+    font-size: 20px;
+    padding: 10px 0px 10px 0px;
+    width: 99%;
+}
+
+/* holds labels for input fields */
+.placeholder-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.placeholder {
+    color: black;
+    font-size: 20px;
+}
+
+/* LOGGED IN */
+
+#profile-picture {
+    width: auto; 
+    height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/**************/
+/* SIGNUP PAGE*/
+/**************/
+
+.signup-form-container {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 70px 1fr;
+    min-height: 100%;
+}
+
+.signup-input {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 99%;
+    padding-bottom: 30px;
+}
+
+.profile-picture-container {
+    /* width: 80%; */
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.signup-form {
+    background-color: cornsilk; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    padding: 20px 0;
+    max-height: 100%;
+}
+.form-signup-grid {
+    display: grid;
+    row-gap: 15px;
+}
+
+#f-name,
+#l-name,
+#u-name,
+#d-of-b,
+#email,
+#phone,
+#address,
+#p-word,
+#confirm-pword,
+#profile-photo {
+    border-radius: 5px;
+    height: 20px;
+    font-size: 20px;
+    padding: 10px 5px 10px 5px;
+    width: 99%;
+}
+
+#upload-photo,
+#create-post{
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    padding: 20px;
+    background-color: cornsilk;
+}
+
+#create-post,
+.signup-input {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.profile-photo{
+    width: auto;
+    height: 800px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#upload-photo-button{
+    font-family: "LS", sans-serif;
+    border: 2px solid var(--accent-1);
+    border-radius: 5px;
+    background: var(--accent-1);
+    padding: 5px 15px;
+    margin: 0px 30px;
+    color: black;
+    font-size: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    width: 315px;
+}
+
+/******************/
+/*CREATE POST PAGE*/
+/******************/
+
+.create-post-form{
+    width: 95%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    gap: 30px;
+    background-color: cornsilk;
+}
+
+#post-title,
+#post-text{
+    border-radius: 5px;
+    height: 20px;
+    font-size: 20px;
+    padding: 10px 5px 10px 5px;
+    width: 99%;
+}
+#post-text{
+
+    height: 200px;
+    min-height: 20px;
+    resize: vertical;
+    white-space: pre-wrap;
+    padding: 10px;            
+    line-height: 1.5;         
+    resize: vertical;       
+    word-wrap: break-word;
+}
+
+.add-post-photo{
+    width: 80%;
+    height: auto;
+    margin-top: 25px;
+    display: block;
+    object-fit: cover;
+}
+
+.add-profile-photo {
+    width: 80%;
+    height: auto;
+    margin-top: 25px;
+    display: block;
+}
+
+.post-button-style{
+    font-family: "LS", sans-serif;
+    border: 2px solid var(--accent-1);
+    border-radius: 5px;
+    background: var(--accent-1);
+    padding: 5px 30px 5px 30px;
+    color: black;
+    font-size: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    width: 20%;
+}
+
+
+/******************/
+/* NEW POSTS PAGE */
+/******************/
+
+/* all the pages on the front page */
+#announcement-bar,
+#signup-title,
+#front-page-posts,
+#view-post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    padding: 20px;
+    background-color: cornsilk;
+}
+
+#announcement-bar {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+#signup-title {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#front-page-posts,
+#view-post-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#front-page-posts {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+#view-post-container {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+}
+
+/********************/
+/* INDIVIDUAL POSTS */
+/********************/
+
+/* POST FORMAT */
+
+/* for preview posts on front page/management page and for viewing full posts */
+.individual-post,
+.full-post {
+    background-color: white;
+    padding: 5px;
+    display: grid;
+    grid-gap: 5px;
+    width: 100%;
+    color: black;
+    border: solid var(--main) 2px;
+    border-radius: 5px;
+}
+
+.individual-post {
+    grid-template-columns: 10% auto 30%;
+    grid-template-rows: 18% 13% 1fr 25% 10%;
+    height: 200px;
+    max-height: 200px;
+}
+
+.full-post {
+    grid-template-columns: 15% auto 30%;
+    grid-template-rows: calc(0.27 * 200px) calc(0.195 * 200px) calc(0.535 * 200px) auto 20px;
+    height: auto;
+}
+
+/* POST GENERAL STYLING */
+
+.post-username,
+.post-time,
+.post-title,
+.post-title-full {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* POST PROFILE PICTURE */
+
+.post-avatar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* POST USERNAME */
+
+.post-username {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-size: 20px;
+}
+
+/* POST TIME */
+
+.post-time {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    font-size: 15px;
+}
+
+/* POST TITLE */
+
+.post-title {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    font-size: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-title-full {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    font-size: 35px;
+}
+
+a {
+    color: black;
+}
+
+/* POST CONTENT */
+
+.post-content-preview {
+    grid-column: 1 / 3;
+    grid-row: 4 / 6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15.5px;
+}
+
+.post-content-full {
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+    padding: 20px 0px 20px 0px;
+}
+
+/* POST PHOTO */
+
+.post-photo,
+.post-photo-full {
+    grid-column: 3 / 4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.post-photo {
+    grid-row: 1 / 5;
+}
+
+.post-photo-full {
+    grid-row: 1 / 4;
+}
+
+/* POST STATS */
+
+.post-stats,
+.post-stats-full {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-stats {
+    grid-column: 3 / 4;
+    grid-row: 5 / 6;
+}
+
+.post-stats-full {
+    grid-column: 1 / 4;
+    grid-row: 5 / 6;
+}
+
+
+/***********************/
+/* INDIVIDUAL COMMENTS */
+/***********************/
+
+#comment-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.individual-comment {
+    background-color: white;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 8% auto 10%;
+    grid-template-rows: calc(0.25 * 100px) calc(0.20 * 100px) auto;
+    height: auto;
+    grid-gap: 5px;
+    width: 100%;
+    color: black;
+    border: solid var(--main) 2px;
+    border-radius: 5px;
+}
+
+/* COMMENT GENERAL STYLING */
+
+.comment-username,
+.comment-time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* COMMENT PROFILE PICTURE */
+
+.comment-avatar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* COMMENT USERNAME */
+
+.comment-username {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-size: 20px;
+}
+
+/* COMMENT TIME */
+
+.comment-time {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    font-size: 15px;
+}
+
+/* COMMENT CONTENT */
+
+.comment-content {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+
+/* COMMENT STATS */
+
+.comment-stats {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.vote-style {
+    border: 2px solid var(--main);
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin: 0px 5px;
+    color: black;
+    font-size: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+}
+
+/* LEAVE A COMMENT */
+
+.comment-form {
+    color: black;
+    border: 2px solid var(--main);
+    border-radius: 5px;
+    width: 100%;
+    margin: 0px;
+    padding: 5px;
+}
+
+.comment-form-container {
+    display: grid;
+    grid-template-columns: 80% 19%;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+
+/* comment input box */
+#leave-comment {
+    width: 100%;
+    border: transparent;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+/* comment button */
+#post-comment {
+    width: auto;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+
+/******************/
+/* ERROR HANDLING */
+/******************/
+
+.error-input {
+    border-color: #ff0000;
+}
+
+.error-text {
+    color: #ff0000;
+    font-style: italic;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
