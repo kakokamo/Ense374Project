@@ -1,11 +1,4 @@
-/*
-Max Krishka-Pachal (200526378)
-Dmytro Stepaniuk (200426341)
-October 1 2024
-CS 215
-Assignment 2
-styles.css
-*/
+
 
 /* everything font */
 @font-face {
@@ -104,6 +97,7 @@ textarea, input[type="text"] {
 /* holds both the company name and the logo image */
 #logo {
     position: absolute;
+    width:fit-content;
     left: 50%;
     transform: translateX(-50%);
     font-family: "RabbitHole", sans-serif;

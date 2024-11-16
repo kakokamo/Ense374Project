@@ -1,9 +1,3 @@
-// Max Krishka-Pachal
-// 200526378
-// October 30 2024
-// CS 215
-// Assignment 3
-// eventRegisterSignup.js
 
 // email
 // error-text-email

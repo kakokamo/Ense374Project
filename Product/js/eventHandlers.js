@@ -1,9 +1,4 @@
-// Max Krishka-Pachal
-// 200526378
-// October 30 2024
-// CS 215
-// Assignment 3
-// eventHandlers.js
+
 
 // constants
 const TITLE_MAX = 100;
