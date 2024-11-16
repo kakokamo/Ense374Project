@@ -75,6 +75,12 @@ body {
     text-align: center;
 }
 
+.body-text {
+    font-size: 15px;
+    color: black;
+    text-align: left;
+}
+
 textarea, input[type="text"] {
     font-family: 'LS', sans-serif;
 }
@@ -388,7 +394,8 @@ textarea, input[type="text"] {
 #announcement-bar,
 #signup-title,
 #front-page-posts,
-#view-post-container {
+#view-post-container 
+#disclaimer-bar{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -399,9 +406,14 @@ textarea, input[type="text"] {
     background-color: cornsilk;
 }
 
-#announcement-bar {
+#disclaimer-bar {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+}
+
+#announcement-bar {
+    grid-column: 2 / 3;
+    grid-row: 3 / 3;
 }
 
 #signup-title {
@@ -417,7 +429,7 @@ textarea, input[type="text"] {
 
 #front-page-posts {
     grid-column: 2 / 3;
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
 }
 
 #view-post-container {
