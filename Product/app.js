@@ -32,7 +32,7 @@ app.use(session({
 
 app.use (passport.initialize());
 app.use (passport.session());
-////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 
 // Simple server operation
 app.listen(port, () => {
@@ -42,7 +42,7 @@ app.listen(port, () => {
 
 
 import { MongoClient } from 'mongodb';
-const uri = "mongodb+srv://my_user:<db_password>@sktrails.pzhno.mongodb.net/";
+const uri = "mongodb+srv://my_user:wtdRaHadvzXSbC6A@sktrails.pzhno.mongodb.net/";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function connectDB() {
@@ -51,54 +51,7 @@ async function connectDB() {
     console.log("Connected to MongoDB Atlas");
     const db = client.db('SkTrailsDB');
     // Further operations
-    async function createUser() {
-        const user = {
-          user_id: "1",
-          email: "user@example.com",
-          first_name: "John",
-          last_name: "Doe",
-          username: "john_doe",
-          password: "hashed_password",
-          dob: "1990-01-01",
-          profile_picture: "link_to_image",
-          favorite_trails: ["Trail 1", "Trail 2"]
-        };
-        
-        const result = await db.collection('users').insertOne(user);
-        console.log("User created with ID:", result.insertedId);
-    }
-
-      async function createPost() {
-        const post = {
-          post_id: "1001",
-          user_id: "1",  // Reference to user
-          title: "Best Trail Experience",
-          content: "This was an amazing experience hiking in the Rockies!",
-          image: "link_to_image",
-          upvotes: 5,
-          downvotes: 1
-        };
-        
-        const result = await db.collection('posts').insertOne(post);
-        console.log("Post created with ID:", result.insertedId);
-      }
-      async function createComment() {
-        const comment = {
-          comment_id: "5001",
-          post_id: "1001",  // Reference to post
-          user_id: "1",  // Reference to user
-          timestamp: new Date(),
-          content: "I agree, this trail is amazing!",
-          upvotes: 3,
-          downvotes: 0
-        };
-        
-        const result = await db.collection('comments').insertOne(comment);
-        console.log("Comment created with ID:", result.insertedId);
-      }
-      createUser();
-      createPost();
-      createComment();
+    
   } catch (e) {
     console.error(e);
   }
