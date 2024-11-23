@@ -24,14 +24,14 @@ app.use(json()); //used to parse JSON request bodies
 app.set('view engine', 'ejs');
 
 // 2. Create a session. The secret is used to sign the session ID.
-app.use(session({
-  secret: process.env.SECRET,
-  resave: false,
-  saveUninitialized: false
-}));
+// app.use(session({
+//   secret: process.env.SECRET,
+//   resave: false,
+//   saveUninitialized: false
+// }));
 
-app.use (passport.initialize());
-app.use (passport.session());
+// app.use (passport.initialize());
+// app.use (passport.session());
 //////////////////////////////////////////////////////////////////////////////////////
 
 // Simple server operation
