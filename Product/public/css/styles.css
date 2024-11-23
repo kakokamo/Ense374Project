@@ -9,7 +9,7 @@
     font-size: 1rem;
   }
   
-  .user-cards {
+  .trail-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: .25rem;
@@ -30,10 +30,10 @@
     font-size: .8rem;
     color: #777;
   }
-  
   .hide {
     display: none;
   }
+  
 
 /* everything font */
 @font-face {
@@ -763,3 +763,20 @@ a {
     visibility: hidden;
     display: none;
 }
+
+/*Search Page*/
+#search-submit {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#search-submit:hover {
+    background: #218838;
+}
+
+.hide {
+    display: none;
+  }
