@@ -37,17 +37,3 @@ blogPostTitle.addEventListener("input", (event) => charCounter(event, 100));
 // dynamic counter for body text
 let blogPostTextarea = document.getElementById("post-text");
 blogPostTextarea.addEventListener("input", (event) => charCounter(event, 2000));
-
-
-const searchInput = document.querySelector("[data-search]")
-
-let trails = []
-
-searchInput.addEventListener("input", e => {
-  const value = e.target.value.toLowerCase()
-  trails.forEach(trail => {
-    const isVisible =
-      trail.location.toLowerCase().includes(value)
-    trail.element.classList.toggle("hide", !isVisible)
-  })
-})

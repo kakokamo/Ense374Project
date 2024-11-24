@@ -18,6 +18,7 @@
                     <img src="images/LogoNoWordsNoLineTransparent.png" alt="Logo" id="logo-image" />
                     <div id="company-name">SK Trails</div>
                 </div>
+                <h1>Post Page</h1>
                 <div id="header-button-container">
                     <!-- logout button goes here -->
                     <a href="index.html" class="button-style">Logout</a>
@@ -161,17 +162,27 @@
                         </div> 
                     </div>
                 </div>
+                <!-- Container for displaying comments -->
+                <div id="comments-section">
+                    <!-- New comments will be appended here -->
+                </div>
 
                 <!-- where the user can leave their own comment -->
                 <form class="comment-form" action="" method="post">
                     <div class="comment-form-container">
-                        <textarea rows="4" cols="50" id="leave-comment" name="leave-comment" ></textarea>
+                        <!-- Textarea for entering comment -->
+                        <textarea rows="10" cols="170" id="leave-comment" name="leave-comment"></textarea>
+                        
+                        <!-- Error message (hidden by default) -->
                         <div id="error-text-comment" class="error-text hidden">
                             Must contain 1 - 1000 characters.
                         </div>
+                        
+                        <!-- Button to submit comment -->
                         <input type="submit" id="post-comment" class="button-style" name="post-comment" value="Post" />
                     </div>
                 </form>
+                
                 <br><br><br>
             </div>
         </div>
