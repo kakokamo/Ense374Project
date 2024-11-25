@@ -1,88 +1,9 @@
-/*Search submission*/
-/* Trail Results Section Styles */
-#trailResults {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-}
-
-#trailResults h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#trail-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card .header {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    padding: 15px;
-    text-align: center;
-    background-color: white;
-}
-
-.card .description {
-    font-size: 14px;
-    color: #666;
-    padding: 10px;
-    text-align: center;
-}
-
-.card .card-footer {
+.search-wrapper {
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: white;
-    font-size: 12px;
-    color: white;
-}
-
-.card .card-footer .button {
-    background-color: #007bff;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.card .card-footer .button:hover {
-    background-color: #0056b3;
-}
-
-/* Responsive Design */
-
-
-@media (max-width: 480px) {
-    #trailResults h2 {
-        font-size: 20px;
-    }
-
-    .card .header {
-        font-size: 16px;
-    }
-
-    .card .description {
-        font-size: 12px;
-    }
-}
-
-/*Search functionality*/
-
+    flex-direction: column;
+    gap: .25rem;
+  }
+  
 #search {
     pointer-events: auto;
     width: 100%; /* Full width of the container */
@@ -96,24 +17,39 @@
     font-size: 1rem;
 }
 
-.trail-cards {
+  input {
+    font-size: 1rem;
+  }
+  
+  .trail-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
-
-.card {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: .25rem;
+    margin-top: 1rem;
+  }
+  
+  .card {
     border: 1px solid black;
     background-color: white;
     position: relative;
     display: flex;
     z-index: 1;
     cursor: pointer;
-}
-
-
-.hide {
-    display:none;
-}
+  }
+  
+  .card > .header {
+    margin-bottom: .25rem;
+    width: 100%;
+  }
+  
+  .card > .body {
+    font-size: .8rem;
+    color: black;
+  }
+  
+  .hide {
+    display: none;
+  }
   
 
 /* everything font */
@@ -877,7 +813,6 @@ a {
     font-size: 1em;
     width: 100%;
     pointer-events: auto;
-    margin-top: 260px;
 }
 
 #search-submit:hover {
@@ -892,8 +827,8 @@ a {
     background: #FFB20E;
     margin: 100px;
     padding: 20px;
-    height: fit-content;
     width: fit-content;
+    height: fit-content;
     border: 2px solid black;
     border-radius: 5px;
     pointer-events: auto;
@@ -901,31 +836,7 @@ a {
     gap: 20px; 
 }
 
-.placeholder-container,
-.placeholder-container2 {
-    flex: 1;
-    display: flex; /* Use flexbox for consistent alignment */
-    flex-direction: column; /* Stack inputs vertically */
-    justify-content: flex-start; /* Align inputs at the top */
-    align-items: flex-start; /* Align inputs horizontally to the left */
-    pointer-events: auto; /* Allow interaction */
-}
-
-.placeholder-container input,
-.placeholder-container2 input {
-    position: relative; /* Allow interaction with inputs */
-    z-index: 2; /* Ensure inputs are interactive */
-    width: 60%; /* Adjust input width if needed */
-    padding: 5px;
-    font-size: 1rem;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="search"],
-#near-water,
-#duration,
-#difficulty {
+input[type="search"] {
     width: 100%; /* Full width of the container */
     padding: 10px; /* Add padding for better visuals */
     margin: 5px; /* Add space between input fields and other elements */
