@@ -58,18 +58,33 @@ async function connectDB() {
 }
 
 connectDB();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 connectDB().catch(console.error);
+
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));  
+});
+
+app.post('/homePage.html', async (req, res) => {
+    try {
+      const db = await connectDB();
+      const collection = db.collection('Users');
+      const formData = req.body;
+      
+      // Insert form data into the collection
+      const result = await collection.insertOne(formData);
+      
+      res.status(200).send("Data has been saved successfully!");
+    } catch (e) {
+      console.error(e);
+      res.status(500).send("An error occurred while saving data.");
+    }
+  });
+
+
+
+
+
+
+
+
