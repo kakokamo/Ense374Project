@@ -16,9 +16,6 @@ const app = express(); // Creating the express app
 const __dirname = dirname(fileURLToPath(import.meta.url)); // Resolving current directory
 const port = 3000; // Port for the server
 
-// Your other setup code here...
-
-
 // host static resources, like js and css
 app.use(express.static(join(__dirname, "public")));
 
@@ -45,20 +42,20 @@ app.listen(port, () => {
 });
 
 // POST route to save trail data into the database
-app.post('/api/trails', async (req, res) => {
-  try {
-    const trailData = req.body;
+// app.post('/api/trails', async (req, res) => {
+//   try {
+//     const userData = req.body;
 
-    // Save the trail data to MongoDB
-    const newTrail = new Trail(trailData);
-    await newTrail.save();
+//     // Save the trail data to MongoDB
+//     const newUser = new Trail(userData);
+//     await newUser.save();
 
-    res.status(200).json({ message: 'Trail data saved successfully', trail: newTrail });
-  } catch (error) {
-    console.error('Error saving trail data:', error);
-    res.status(500).json({ message: 'Failed to save trail data' });
-  }
-});
+//     res.status(200).json({ message: 'Trail data saved successfully', trail: newTrail });
+//   } catch (error) {
+//     console.error('Error saving trail data:', error);
+//     res.status(500).json({ message: 'Failed to save trail data' });
+//   }
+// });
 
 
 import { MongoClient } from 'mongodb';
@@ -88,16 +85,16 @@ app.get('/', (req, res) => {
 app.post('/homePage.html', async (req, res) => {
     try {
       const db = await connectDB();
-      const collection = db.collection('Users');
+       //const collection = db.collection('Users');
       const formData = req.body;
       
       // Insert form data into the collection
-      const result = await collection.insertOne(formData);
-      
-      res.status(200).send("Data has been saved successfully!");
+      //const result = await collection.insertOne(formData);
+      res.redirect('/homePage.html');
+      //res.status(200).send("Data has been saved successfully!");
     } catch (e) {
       console.error(e);
-      res.status(500).send("An error occurred while saving data.");
+      res.status(500).send("An error occurred while saving data." , e);
     }
   });
 
