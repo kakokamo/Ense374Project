@@ -41,14 +41,14 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-// POST route to save trail data into the database
+//POST route to save trail data into the database
 // app.post('/api/trails', async (req, res) => {
 //   try {
-//     const userData = req.body;
+//     const trailData = req.body;
 
 //     // Save the trail data to MongoDB
-//     const newUser = new Trail(userData);
-//     await newUser.save();
+//     const newTrail = new Trail(trailData);
+//     await newTrail.save();
 
 //     res.status(200).json({ message: 'Trail data saved successfully', trail: newTrail });
 //   } catch (error) {
