@@ -18,4 +18,4 @@ healthier lifestyles for people within the region.
 ## Check the following document
 ENSE 374 – Software Engineering Management Group Project
 
-
+https://github.com/kakokamo/Ense374Project/blob/bb8c03a06f6db2a40279e3dee6aba6fbe6719820/ENSE%20374%20%E2%80%93%20Software%20Engineering%20Management%20Group%20Project.pdf
